@@ -6325,6 +6325,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3902288609004991064, guid: 1382c582a6cdc1e4dbb841058a6d089d,
         type: 3}
+      propertyPath: attackRadius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902288609004991064, guid: 1382c582a6cdc1e4dbb841058a6d089d,
+        type: 3}
+      propertyPath: targetMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902288609004991064, guid: 1382c582a6cdc1e4dbb841058a6d089d,
+        type: 3}
+      propertyPath: obstructionMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902288609004991064, guid: 1382c582a6cdc1e4dbb841058a6d089d,
+        type: 3}
       propertyPath: movementPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -7058,6 +7073,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 436144444676759233}
     m_Modifications:
+    - target: {fileID: 3902288609004991064, guid: 1382c582a6cdc1e4dbb841058a6d089d,
+        type: 3}
+      propertyPath: attackRadius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902288609004991064, guid: 1382c582a6cdc1e4dbb841058a6d089d,
+        type: 3}
+      propertyPath: targetMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902288609004991064, guid: 1382c582a6cdc1e4dbb841058a6d089d,
+        type: 3}
+      propertyPath: obstructionMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3902288609004991064, guid: 1382c582a6cdc1e4dbb841058a6d089d,
         type: 3}
       propertyPath: movementPoints.Array.size
