@@ -12,6 +12,7 @@ public class Score : MonoBehaviour
     public float seconds;
     public float ms;
 
+
     void Awake() => txtScore = GetComponent<Text>();
     void FixedUpdate() {
         if (timeComboValue > 0){
@@ -26,17 +27,17 @@ public class Score : MonoBehaviour
     public void AddPoints(int points)
     {
         score += (points * this.combo);
-        txtScore.text = $"Souls: {score} x{combo}.{ms}";
+        txtScore.text = $"SOULS: {score}     COMBO: x{combo}  {seconds}.{ms}";
     }
     public void IncreaseCombo(){
         this.combo++;
         this.timeComboValue = 5;
-        txtScore.text = $"Souls: {score} x{combo}.{ms}";
+        txtScore.text = $"SOULS: {score}     COMBO: x{combo}  {seconds}.{ms}";
     }
     public void ResetCombo(){
         this.combo = 1;
         this.timeComboValue = 0;
-        txtScore.text = $"Souls: {score} x{combo}.{ms}";
+        txtScore.text = $"SOULS: {score}     COMBO: x{combo}  {seconds}.{ms}";
     }
     void DisplayTime(float timeToDisplay){
         if(timeToDisplay < 0)
@@ -47,6 +48,6 @@ public class Score : MonoBehaviour
         this.ms = Mathf.FloorToInt(timeToDisplay * 1000);
         this.ms = this.ms % 1000;
 
-        txtScore.text = $"Souls: {score} x{combo} {seconds}.{ms}";
+        txtScore.text = $"SOULS: {score}     COMBO: x{combo}  {seconds}.{ms}";
     }
 }

@@ -10,8 +10,10 @@ public class Timer : MonoBehaviour
     [SerializeField] float timeValue;
     [SerializeField] Text timerText;
     [SerializeField] Text winnerText;
+     [SerializeField] GameObject drawText;
 
     float timeEnd = 6.0f;
+    [SerializeField] string nulltext;
 
     Score score;
     ScoreP2 scoreP2;
@@ -20,6 +22,7 @@ public class Timer : MonoBehaviour
     {
         score = FindObjectOfType<Score>();
         scoreP2 = FindObjectOfType<ScoreP2>();
+        nulltext = "";
     }
     void Update()
     {
@@ -30,19 +33,30 @@ public class Timer : MonoBehaviour
         else
         {
             timeValue = 0;
+            
             if (score.score > scoreP2.score)
-            {
-                winnerText.text = PlayerPrefs.GetString("name1") + " Wins";
+            {  
+                if(PlayerPrefs.GetString("name1") == nulltext)
+                {
+                    nulltext = "P1";
+                    
+                }
+                winnerText.text = PlayerPrefs.GetString("name1") + nulltext+ " WINS";
                 Destroy (GameObject.FindWithTag("soul"));
             }
             if (scoreP2.score > score.score)
             {
-                winnerText.text = PlayerPrefs.GetString("name2") + " Wins";
+                if(PlayerPrefs.GetString("name2") == nulltext)
+                {
+                    nulltext = "P2";
+                    
+                }
+                winnerText.text = PlayerPrefs.GetString("name2") + nulltext + " WINS";
                 Destroy (GameObject.FindWithTag("soul"));
             }
             if (score.score == scoreP2.score)
             {
-                winnerText.text = "Draw";
+                drawText.SetActive(true);
                 Destroy (GameObject.FindWithTag("soul"));
             }
             //SceneManager.LoadScene("Menu");

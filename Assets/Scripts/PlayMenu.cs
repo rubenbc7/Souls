@@ -15,6 +15,7 @@ public class PlayMenu : MonoBehaviour
         Destroy(music.gameObject);
         PlayerPrefs.SetString("name1", txtPlayer1.text);
         PlayerPrefs.SetString("name2", txtPlayer2.text);
+        
         SceneManager.LoadScene("SampleScene");
     }
 }
