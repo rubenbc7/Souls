@@ -703,6 +703,7 @@ GameObject:
   - component: {fileID: 8489502417874921738}
   - component: {fileID: 8489502417874921736}
   - component: {fileID: 8489502417874921741}
+  - component: {fileID: 3857779627278976840}
   - component: {fileID: 7772797673706008530}
   - component: {fileID: 7772797673706008524}
   - component: {fileID: 8489502417874921743}
@@ -824,6 +825,18 @@ MonoBehaviour:
   gravityValue: 1.5
   cameraPlayer: {fileID: 0}
   sfx: {fileID: 0}
+--- !u!114 &3857779627278976840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8489502417874921847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60dc4ed51400104b86c4b8926f66734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &7772797673706008530
 AudioSource:
   m_ObjectHideFlags: 0

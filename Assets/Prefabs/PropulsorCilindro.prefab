@@ -473,9 +473,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8463163051254056165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45432d0d999906148bedeb20968e92f3, type: 3}
+  m_Script: {fileID: 11500000, guid: e2219054c18daef429192da86d8d80cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 40
+  pushForce: 45
   tag_player1: player1
   tag_player2: player2

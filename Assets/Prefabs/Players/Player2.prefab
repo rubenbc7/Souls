@@ -800,6 +800,7 @@ GameObject:
   - component: {fileID: 6797126334650730103}
   - component: {fileID: 6797126334650730102}
   - component: {fileID: 6797126334650730097}
+  - component: {fileID: 2162147548931773381}
   - component: {fileID: 4637156574760134398}
   - component: {fileID: 4637156574760134399}
   - component: {fileID: 4637156574760134379}
@@ -906,6 +907,22 @@ MonoBehaviour:
   gravityValue: 1.5
   cameraPlayer: {fileID: 0}
   sfx: {fileID: 0}
+--- !u!114 &2162147548931773381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6797126334650729995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60dc4ed51400104b86c4b8926f66734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInMap: {fileID: 0}
+  map2dEnd: {fileID: 0}
+  map3dParent: {fileID: 0}
+  map3dEnd: {fileID: 0}
 --- !u!82 &4637156574760134398
 AudioSource:
   m_ObjectHideFlags: 0
