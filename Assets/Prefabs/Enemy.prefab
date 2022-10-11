@@ -251,12 +251,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 10
-  targetPlayers:
-  - {fileID: 0}
-  attackRadius: 3
-  attackSpeed: 20
-  pushForce: 60
+  speed: 15
+  targetPlayer1: []
+  targetPlayer2: []
+  attackRadius: 7
+  attackSpeed: 15
+  pushForce: 45
   targetMask:
     serializedVersion: 2
     m_Bits: 256
