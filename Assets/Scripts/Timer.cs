@@ -10,7 +10,10 @@ public class Timer : MonoBehaviour
     [SerializeField] float timeValue;
     [SerializeField] Text timerText;
     [SerializeField] Text winnerText;
-     [SerializeField] GameObject drawText;
+
+    [SerializeField] GameObject retry;
+    [SerializeField] GameObject menu;
+    [SerializeField] GameObject end_panel;
 
     float timeEnd = 6.0f;
     [SerializeField] string nulltext;
@@ -41,7 +44,11 @@ public class Timer : MonoBehaviour
                     nulltext = "P1";
                     
                 }
+
                 winnerText.text = PlayerPrefs.GetString("name1") + nulltext+ " WINS";
+                retry.SetActive(true);
+                menu.SetActive(true);
+                end_panel.SetActive(true);
                 Destroy (GameObject.FindWithTag("soul"));
             }
             if (scoreP2.score > score.score)
@@ -52,24 +59,30 @@ public class Timer : MonoBehaviour
                     
                 }
                 winnerText.text = PlayerPrefs.GetString("name2") + nulltext + " WINS";
+                retry.SetActive(true);
+                menu.SetActive(true);
+                end_panel.SetActive(true);
                 Destroy (GameObject.FindWithTag("soul"));
             }
             if (score.score == scoreP2.score)
             {
-                drawText.SetActive(true);
+                winnerText.text = "Draw";
+                retry.SetActive(true);
+                menu.SetActive(true);
+                end_panel.SetActive(true);
                 Destroy (GameObject.FindWithTag("soul"));
             }
             //SceneManager.LoadScene("Menu");
 
-            if (timeEnd > 0)
-            {
-                timeEnd -= Time.deltaTime;
-            }
-            else
-            {
-                timeEnd = 0;
-                SceneManager.LoadScene("Menu");
-            }
+            //if (timeEnd > 0)
+            //{
+            //    timeEnd -= Time.deltaTime;
+            //}
+            //else
+            //{
+            //    timeEnd = 0;
+            //    SceneManager.LoadScene("Menu");
+            //}
 
 
         }

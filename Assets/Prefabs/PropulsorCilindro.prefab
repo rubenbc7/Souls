@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 6402740366182702021}
   - component: {fileID: 4740663037011179031}
   - component: {fileID: 3478116299245666433}
-  - component: {fileID: 9121735431015190699}
+  - component: {fileID: 3553679019200598638}
   m_Layer: 0
   m_Name: PropulsorCilindro
   m_TagString: Untagged
@@ -464,7 +464,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &9121735431015190699
+--- !u!114 &3553679019200598638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -473,9 +473,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8463163051254056165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45432d0d999906148bedeb20968e92f3, type: 3}
+  m_Script: {fileID: 11500000, guid: e2219054c18daef429192da86d8d80cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 40
+  pushForce: 45
   tag_player1: player1
   tag_player2: player2
