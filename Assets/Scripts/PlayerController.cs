@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -43,19 +45,44 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Camera cameraPlayer;
 
+     [Header("Dynamic Field of View")]
+    
+    [SerializeField] Camera Camera;
+    [SerializeField] private float dynamicFOVStart;
+    [SerializeField] private float dynamicFOVLimit;
+
     
     Rigidbody rb;
     private Vector2 movementInput = Vector2.zero;
     private bool jumped = false;
+    private InputAction accelerating;
     public AudioSource sfx;
 
-    
+    PlayerControls playerControls;
 
-    void Awake() 
+    public CinemachineFreeLook cam;
+
+
+    void Awake()
     {
+        playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody>();
     }
+    private void OnEnable()
+    {
+        
+        accelerating = playerControls.Player.Accelerate;
+        accelerating.Enable();
 
+        //playerControls.Player.Accelerate.performed += OnAccelerate;
+        playerControls.Player.Accelerate.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
+    
     void Start()
     {
         sfx = GetComponent<AudioSource>();
@@ -76,6 +103,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /*private void OnAccelerate(InputAction.CallbackContext context)
+    {
+        bool isAccelerating = playerControls.Player.Accelerate.ReadValue<float>() > 0.1f;
+        moveSpeed = moveSpeed  * 1.5f;
+        Debug.Log("Acelerando");
+    }*/
+
     void Update()
     {
 
@@ -95,6 +129,7 @@ public class PlayerController : MonoBehaviour
             }
             transform.position = new Vector3(0f, 1.3f, 0f);
         }
+        DynamicFOV();
     }
 
     private void FixedUpdate() 
@@ -147,10 +182,27 @@ public class PlayerController : MonoBehaviour
     {
         
         rb.AddForce(cameraPlayer.transform.TransformDirection(Axis) * moveSpeed);
-        
-        
-        
         //Camera.allCameras Camera.main.transform.TransformDirection(Axis) Axis.Normalize();
         Axis.Normalize();
     }
+
+
+
+     void DynamicFOV()
+    {
+        //Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
+        cam.m_Lens.FieldOfView = (rb.velocity.magnitude/2) + 50f;
+    }
+     
+     /*IEnumerator ChangeFOV(CinemachineFreeLook cam, float endFOV, float duration)
+     {
+         float startFOV = cam.m_Lens.FieldOfView;
+         float time = 0;
+         while(time < duration)
+         {
+             cam.m_Lens.FieldOfView = Mathf.Lerp(startFOV, endFOV, time / duration);
+             yield return null;
+             time += Time.deltaTime;
+         }
+     }*/
 }

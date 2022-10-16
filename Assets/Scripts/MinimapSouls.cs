@@ -31,7 +31,9 @@ public class MinimapSouls : MonoBehaviour
 
     private void Update()
     {
-        normalized = Divide(
+        if(map2dEnd != null)
+        {
+            normalized = Divide(
                 map3dParent.InverseTransformPoint(this.transform.position),
                 map3dEnd.position - map3dParent.position
             );
@@ -39,6 +41,8 @@ public class MinimapSouls : MonoBehaviour
         mapped = Multiply(normalized, map2dEnd.localPosition);
         mapped.z = 0;
         soulsInMap.localPosition = mapped;
+        }
+        
     }
 
     private static Vector3 Divide(Vector3 a, Vector3 b)

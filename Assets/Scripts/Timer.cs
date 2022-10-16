@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
     [SerializeField] GameObject menu;
     [SerializeField] GameObject end_panel;
 
-    float timeEnd = 6.0f;
+    //float timeEnd = 6.0f;
     [SerializeField] string nulltext;
 
     Score score;

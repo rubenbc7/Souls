@@ -811,7 +811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 25
   maxSpeed: 50
-  jumpForce: 12
+  jumpForce: 20
   score: {fileID: 0}
   scoreP2: {fileID: 0}
   comboP2: 0
@@ -824,6 +824,9 @@ MonoBehaviour:
   useGravity: 1
   gravityValue: 1.5
   cameraPlayer: {fileID: 0}
+  Camera: {fileID: 0}
+  dynamicFOVTime: 1
+  dynamicFOVLimit: 100
   sfx: {fileID: 0}
 --- !u!114 &3857779627278976840
 MonoBehaviour:
@@ -837,6 +840,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60dc4ed51400104b86c4b8926f66734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInMap: {fileID: 0}
+  map2dEnd: {fileID: 0}
+  map3dParent: {fileID: 0}
+  map3dEnd: {fileID: 0}
 --- !u!82 &7772797673706008530
 AudioSource:
   m_ObjectHideFlags: 0
@@ -991,6 +998,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 76301f8f-5d47-41a3-a1b6-01895ff0484d
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8489502417874921741}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAccelerate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b777037b-e436-4610-aaa6-0e211b4f40b4
+    m_ActionName: Player/Accelerate[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
